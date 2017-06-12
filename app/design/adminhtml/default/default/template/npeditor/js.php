@@ -4,12 +4,10 @@
     <?php endif ?>
     var extPlugins = 'codemirror';
     <?php if ($this->getEnableWidgets()): ?>
-    extPlugins = 'widget,lineutils,magewidget,codemirror';
+    extPlugins = 'widget,lineutils,magewidget,codemirror,markdown,entities,colorbutton,colordialog,panelbutton,button,floatpanel,panel';
     <?php endif ?>
     function advEditorToggle(elementId) {
         if (CKEDITOR.instances[elementId]) {
-            
-            document.getElementById(elementId).value = CKEDITOR.instances[elementId].getData();
             CKEDITOR.instances[elementId].destroy(true);
 
             return null;
@@ -29,8 +27,7 @@
                 width: '99.5%',
                 toolbarCanCollapse: true,
                 language: '<?php echo Mage::helper('npeditor')->getLanguage() ?>',
-                extraPlugins: extPlugins,
-                removeButtons: 'Save'
+                extraPlugins: extPlugins
             });
             
             //workaround for editor in hidden tab

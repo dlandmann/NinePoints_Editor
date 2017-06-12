@@ -1,3 +1,17 @@
+## Fork
+
+- compatible with Magento 1.9.x and / or Security Patch 8788
+- update ckeditor 4.6.2
+- add markdown-module
+- add entities-module
+
+![Sample](/screens/screen.png)
+![Sample Markdown](/screens/screen_md.png)
+
+==============================================
+
+
+
 ## NinePoints_Editor
 
 This extension replace Magento default WYSIWYG editor with CKEditor (http://ckeditor.com/)
