@@ -1,41 +1,58 @@
 /**
- * @license Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
 CKEDITOR.editorConfig = function( config ) {
-    // Define changes to default configuration here.
-    // For the complete reference:
-    // http://docs.ckeditor.com/#!/api/CKEDITOR.config
+	// Define changes to default configuration here.
+	// For complete reference see:
+	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
-    // The toolbar groups arrangement, optimized for two toolbar rows.
-    config.toolbarGroups = [
-        { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-        { name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-        { name: 'links' },
-        { name: 'insert' },
-        { name: 'tools' },
-        { name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-        { name: 'others' },
-        '/',
-        { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-        { name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-        { name: 'styles' },
-        { name: 'colors' },
-        { name: 'about' }
-    ];
+	// Background Color Editor UI
+	//config.uiColor = '#ffffff';
+	config.toolbarCanCollapse = true;
 
-    // Remove some buttons, provided by the standard plugins, which we don't
-    // need to have in the Standard(s) toolbar.
-    config.removeButtons = 'Underline,Subscript,Superscript';
+	// The toolbar groups arrangement, optimized for two toolbar rows.
+	config.toolbarGroups = [
+		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'links' },
+		{ name: 'insert' },
+		{ name: 'forms' },
+		{ name: 'tools' },
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'others' },
+		'/',
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'styles' },
+		{ name: 'colors' },
+		{ name: 'about' }
+	];
 
-    // Se the most common block elements.
-    config.format_tags = 'p;h1;h2;h3;pre';
+	// Remove some buttons provided by the standard plugins, which are
+	// not needed in the Standard(s) toolbar.
+	//config.removeButtons = 'Underline,Subscript,Superscript';
 
-    // Make dialogs simpler.
-    config.removeDialogTabs = 'image:advanced;link:advanced';
+	// Set the most common block elements.
+	config.format_tags = 'p;h1;h2;h3;pre';
 
+	// Simplify the dialog windows.
+	config.removeDialogTabs = 'image:advanced;link:advanced';
+
+	// only for sample-site!!
+	// list extraplugins here - app/design/adminhtml/default/default/template/npeditor/js.php
+	config.extraPlugins = 	"widget,lineutils,codemirror,markdown,entities," +
+							"colorbutton,colordialog,panelbutton,button,floatpanel,panel" ;
+
+	// dont converting
+    config.entities_latin = false;
+    config.entities_greek = false;
     config.entities = false;
+    config.basicEntities = false;
 
-    //config.extraPlugins = 'widget,lineutils,magewidget'
+    // color palette
+    config.colorButton_colors = 'FF9900,0066CC,F00,CCC';
+    config.colorButton_enableMore = false;
+
 };

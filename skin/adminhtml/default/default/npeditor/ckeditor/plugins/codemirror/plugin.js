@@ -621,7 +621,8 @@
                     'role': 'textbox',
                     'aria-label': ariaLabel
                 });
-                textarea.addClass('cke_source cke_reset cke_enable_context_menu');
+                //textarea.addClass('cke_source cke_reset cke_enable_context_menu');
+                textarea.addClass('cke_source').addClass('cke_reset').addClass('cke_enable_context_menu');  // fix issue #2
                 editor.ui.space('contents').append(textarea);
                 window["editable_" + editor.id] = editor.editable(new sourceEditable(editor, textarea));
                 // Fill the textarea with the current editor data.
